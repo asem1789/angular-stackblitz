@@ -1,1 +1,19 @@
-<h2>app component work</h2>
+<h1>Flop Voter</h1>
+
+<!-- <span [hidden]="selectedIndex < 0">{{ selectedIndex }}</span> -->
+<span [class.hide]="selectedIndex < 0 ">{{ selectedIndex }}</span>
+<div style="display: flex; flex-wrap: wrap">  
+
+  <div *ngFor="let flop of flops, let i = index" style="margin: 25px">
+    <h3 [hidden]="!isSelected(i)">Chosen !</h3>
+    <img class="img" src={{flop.link}} />
+    <br />
+    <button
+      [disabled]="anySelected() && !isSelected(i)"
+      (click)="onVoteClick(i)"
+    >
+      {{ getButtonText(i) }}
+    </button>
+  </div>
+
+</div>
