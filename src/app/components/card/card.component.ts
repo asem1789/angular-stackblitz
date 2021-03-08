@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Flops } from 'src/app/flops';
+import { Flops } from '../../flops';
 
 @Component({
   selector: 'app-card',
