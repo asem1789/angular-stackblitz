@@ -22,28 +22,10 @@ export class AppComponent implements OnInit {
     this.flops = flops;
   }
   
-  onVoteClick(index: number) {
-    if(this.isSelected(index)){
-      this.selectedIndex = -1;
-    } else {
-      this.selectedIndex = index;
-    }
+  onAfterSelected(form: any) {
+    console.log("inf App component: ", form);
+    this.selectedIndex = form;
   }
 
-  isSelected(index:number) {
-    return this.selectedIndex === index;
-  }
-
-  anySelected(){
-    return this.selectedIndex !== -1;
-  }
-
-  getButtonText(index: number) {
-    if(this.isSelected(index)){
-      return "Unvote";
-    } else {
-      return "Vote";
-    }
-  }
 
 }

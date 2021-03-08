@@ -1,0 +1,13 @@
+<div style="margin: 15px">
+  <h3 [hidden]="!isSelected(index)">Chosen !</h3>
+  <img class="img" src={{flop.link}} />
+  <br />
+
+  <button  
+    [disabled]="anySelected() && !isSelected(index)"
+    (click)="onVoteClick(index)"
+  >
+    {{ getButtonText(index) }}
+  </button>
+
+</div>
