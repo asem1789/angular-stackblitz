@@ -8,4 +8,8 @@ p {
   position: absolute;
   right: 30px;
   top: 20px;
+  width: 60px;
+  text-decoration: none;
+  border: 1px solid red;
+  text-align: center;
 }
