@@ -4,7 +4,7 @@
 <span [class.hide]="selectedIndex < 0 ">{{ selectedIndex }}</span>
 <div style="display: flex; flex-wrap: wrap">  
 
-  <div *ngFor="let flop of flops, let i = index" style="margin: 25px">
+  <div *ngFor="let flop of flops, let i = index" style="margin: 15px">
     <h3 [hidden]="!isSelected(i)">Chosen !</h3>
     <img class="img" src={{flop.link}} />
     <br />
