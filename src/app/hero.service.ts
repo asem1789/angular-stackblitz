@@ -15,6 +15,7 @@ const httpOptions = {
 export class HeroService {
 
   private heroesUrl = 'api/heroes';  // URL to web api
+  // hero!: number;
 
   constructor(
     private http: HttpClient,

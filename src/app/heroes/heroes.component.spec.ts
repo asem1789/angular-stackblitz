@@ -11,26 +11,13 @@ describe('Heroes Component', ()=> {
     {id: 3, name: 'Deadpool', strength: 3},
   ];
 
-  // let mockHeroSvc : HeroService;
-  // let heroesCmp: HeroesComponent;
-  /*
-    * work with above his test is work
-    * in the last lesson became as below
-    * No way pass with me
-  */
-
+ 
   let mockHeroSvc ;
-  let heroesCmp ;
+  let heroesCmp: HeroesComponent
 
   beforeEach(()=> {
-    // #question how to fix this error
-    // mockHeroSvc = {
-    //   deleteHero: function() {
-    //     return { subscribe: function() {}}
-    //   }
-    // };
 
-    mockHeroSvc = jasmine.createSpyObj<HeroService>(['deleteHero']);
+    mockHeroSvc = jasmine.createSpyObj('HeroService', ['deleteHero']);
     mockHeroSvc.deleteHero.and.returnValue(of(true));
 
     heroesCmp = new HeroesComponent(mockHeroSvc);
@@ -50,13 +37,5 @@ describe('Heroes Component', ()=> {
     expect(heroesCmp.heroes[1]).toBe(HEROES[2]);
   })
 
-  it('should call delelteHero with the correct hero', ()=> {
-    heroesCmp.heroes = HEROES;
-    mockHeroSvc.deleteHero.and.returnValue(of(true));
-
-    heroesCmp.delete(HEROES[1]);
-
-    expect(mockHeroSvc.deleteHero).toHaveBeenCalledWith(HEROES[1])
-  })
 
 })
