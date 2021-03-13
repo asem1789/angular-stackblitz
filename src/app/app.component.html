@@ -1,1 +1,26 @@
 <h2>app component work</h2>
+
+<p>here we used build in size gt-sm, Ok is work :)</p>
+<button ngClass.gt-sm="hide" style="margin-bottom: 30px">
+  It must hide when inner screen min-width 960px
+</button>
+
+<br />
+
+<p>should be affect by .test-class class when with under 400px</p>
+<button ngClass.xs.print="test-class">
+  It must change background and border when inner screen max-width 400px
+</button>
+
+<!-- 
+    * whay ngClass.xs.print directive not work,
+    * So, I've followed  documentation, I serach much, but still problem
+    * there is some wrong 
+
+    @@ how can fix it
+
+    My reference that I follow it:
+    1- https://github.com/angular/flex-layout/wiki/BreakPoints
+    2- https://stackoverflow.com/questions/61660059/how-to-use-angular-flex-ngclass-with-custom-breakpoints
+
+ -->
