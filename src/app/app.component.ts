@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CountriesService } from './countries.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Directives';
+  countries: any[] = [];
+  searchFilter: string = '';
+
+  
+  constructor(
+    private countriesService: CountriesService,
+  ) {
+    this.getAllCountries();
+  }
+
+  getAllCountries() {
+    this.countriesService.getAllCountries().subscribe((res: any[]) => {
+      this.countries = res;
+    });
+  }
 }
