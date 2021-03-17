@@ -1,0 +1,17 @@
+.country-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 30px;
+}
+
+app-card {
+  flex: 1 0 23%;
+  height: 350px;
+  box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.445);
+  margin-bottom: 30px;
+}
+
+app-card:not(:nth-child(4n + 0)){
+  margin-right: 2%;
+
+}

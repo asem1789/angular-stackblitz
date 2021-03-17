@@ -1,0 +1,24 @@
+<section
+  *ngIf="country"
+  [routerLink]="'/' + country.name"
+  class="country-card shadow"
+>
+  <section class="country-card-img">
+    <img [src]="country.flag" />
+  </section>
+  <section class="country-card-info">
+    <h2>{{ country.name }}</h2>
+    <p>
+      <b>Population:</b>
+      {{ country.population | number: "1.0" }}
+    </p>
+    <p>
+      <b>Region:</b>
+      {{ country.region }}
+    </p>
+    <p>
+      <b>Capital:</b>
+      {{ country.capital }}
+    </p>
+  </section>
+</section>
